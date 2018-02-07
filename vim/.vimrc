@@ -4,12 +4,40 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-call plug#end()
 
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-jedi', { 'do': 'git submodule update --init', 'for': ['python'] }
+
+
+Plug 'mhinz/vim-startify'
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+" airline settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='papercolor'
 
-
+" startify setting
+let g:startify_change_to_vcs_root = 1
+let g:startify_update_oldfiles = 1
+let g:startify_session_dir = '~/.vim/session/'
+let g:startify_bookmarks = [ '~/.vimrc' ]
+let g:startify_custom_header = []
+let g:startify_list_order = [
+        \ ['   Bookmarks:'],
+        \ 'bookmarks',
+        \ ['   Sessions:'],
+        \ 'sessions',
+        \ ['   MRU:'],
+        \ 'dir',
+        \ ['   Files'],
+        \ 'files'
+        \ ]
 
 
 let mapleader = ","
